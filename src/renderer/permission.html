@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://ddragon.leagueoflegends.com; connect-src 'self' https:; style-src 'self' 'unsafe-inline'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>权限探索</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-shell popup-mode">
+      <main class="content">
+        <header class="topbar">
+          <div class="titlebar-left">
+            <div class="titlebar-brand no-drag">
+              <span class="titlebar-title">权限探索</span>
+            </div>
+          </div>
+          <div class="topbar-right">
+            <div class="window-controls no-drag">
+              <button id="window-minimize" class="window-control-btn" aria-label="最小化">—</button>
+              <button id="window-maximize" class="window-control-btn" aria-label="最大化">▢</button>
+              <button id="window-close" class="window-control-btn close" aria-label="关闭">×</button>
+            </div>
+          </div>
+        </header>
+        <section id="page-permission" class="page active">
+          <h2>权限探索</h2>
+          <div class="diagnostics">
+            <div class="diag-title">已选组件</div>
+            <div id="permission-rules-list"></div>
+          </div>
+          <div class="diagnostics">
+            <div class="diag-title">提示</div>
+            <p>保持此窗口打开，同时在主窗口悬浮/点击组件以采集唯一名。</p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./permission.js"></script>
+  </body>
+  </html>

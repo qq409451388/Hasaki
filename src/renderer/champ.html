@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://ddragon.leagueoflegends.com; connect-src 'self' https://ddragon.leagueoflegends.com https:; style-src 'self' 'unsafe-inline'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>选人助手</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-shell popup-mode">
+      <main class="content">
+        <header class="topbar">
+          <div class="titlebar-left">
+            <div class="titlebar-brand no-drag">
+              <span class="titlebar-title">选人助手</span>
+            </div>
+          </div>
+          <div class="topbar-right">
+            <div class="window-controls no-drag">
+              <button id="window-minimize" class="window-control-btn" aria-label="最小化">—</button>
+              <button id="window-maximize" class="window-control-btn" aria-label="最大化">▢</button>
+              <button id="window-close" class="window-control-btn close" aria-label="关闭">×</button>
+            </div>
+          </div>
+        </header>
+        <section id="page-champ-popup" class="page active">
+          <h2>选人助手</h2>
+          <p>正在监听房间选人信息，详细会话数据打印到控制台。</p>
+          <div id="prompt-view" class="diagnostics">
+            <div class="diag-title">系统提示词（渲染后）</div>
+            <textarea id="prompt-preview" class="form-textarea" rows="8" data-auth-key="ChampWindow.PromptPreview.unit"></textarea>
+          </div>
+          <div class="controls">
+            <button id="ai-generate-btn" data-auth-key="ChampWindow.AiGenerateBtn.unit">生成建议</button>
+          </div>
+          <div id="ai-result-view" class="diagnostics">
+            <div class="diag-title">AI 结果</div>
+            <pre id="ai-result" data-auth-key="ChampWindow.AiResult.unit"></pre>
+          </div>
+          <div id="champ-session-view" class="diagnostics">
+            <div class="diag-title">当前会话</div>
+            <pre id="champ-session-json" data-auth-key="ChampWindow.SessionJson.unit"></pre>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="loading-content">
+        <div class="spinner"></div>
+        <div class="loading-text">正在连接 LCU…</div>
+      </div>
+    </div>
+    <script src="./champ.js"></script>
+  </body>
+  </html>
